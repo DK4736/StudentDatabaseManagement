@@ -43,5 +43,10 @@
                 <Font size="25.0" />
             </font>
         </Label>
+        <Button layoutX="699.0" layoutY="585.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Sign Up" textFill="WHITE" underline="true">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>
