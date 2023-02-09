@@ -16,17 +16,17 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <TextField fx:id="searchField" layoutX="14.0" layoutY="63.0" onAction="#search_user" prefHeight="18.0" prefWidth="306.0" promptText="Searching" />
+        <TextField fx:id="searchField" layoutX="24.0" layoutY="63.0" onAction="#search_user" prefHeight="26.0" prefWidth="589.0" promptText="Searching" />
         <ScrollPane layoutY="105.0" prefHeight="696.0" prefWidth="1550.0">
             <content>
-                <TableView fx:id="table_users" prefHeight="470.0" prefWidth="1364.0" style="-fx-background-color: #A2E44;">
+                <TableView fx:id="table_users" prefHeight="695.0" prefWidth="1547.0" style="-fx-background-color: #A2E44;">
                     <columns>
                         <TableColumn fx:id="ID" prefWidth="40.0" text="№" />
-                        <TableColumn fx:id="StudentID" prefWidth="128.0" text="Student ID number" />
-                        <TableColumn fx:id="StudentName" prefWidth="307.0" text="Full Name of Student" />
-                        <TableColumn fx:id="GroupNumber" prefWidth="124.0" text="Group number" />
-                        <TableColumn fx:id="EmailAddress" prefWidth="250.0" text="EmailAddress" />
-                        <TableColumn fx:id="PhoneNumber" prefWidth="124.0" text="PhoneNumber" />
+                        <TableColumn fx:id="StudentID" prefWidth="224.00001907348633" text="Student ID number" />
+                        <TableColumn fx:id="StudentName" prefWidth="460.8000183105469" text="Full Name of Student" />
+                        <TableColumn fx:id="GroupNumber" prefWidth="258.9999694824219" text="Group number" />
+                        <TableColumn fx:id="EmailAddress" prefWidth="305.39990234375" text="EmailAddress" />
+                        <TableColumn fx:id="PhoneNumber" prefWidth="248.5999755859375" text="PhoneNumber" />
                     </columns>
                 </TableView>
             </content>
