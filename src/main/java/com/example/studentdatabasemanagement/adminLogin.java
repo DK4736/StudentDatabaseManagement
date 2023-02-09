@@ -38,9 +38,9 @@ public class adminLogin implements Initializable {
     private Label LoginMessageLabel;
 
     @FXML
-    private TextField usernameTextField;
+    private TextField adminTextField;
     @FXML
-    private PasswordField passwordField;
+    private PasswordField adminPassword;
 
 
     public adminLogin(){}
@@ -66,11 +66,11 @@ public class adminLogin implements Initializable {
     @FXML
     private void admLoginButton (ActionEvent event) throws Exception {
         conn = MySQLConnection.ConnectDb();
-        String sql = "Select * from useraccount where UserName = ? and Password = ?";
+        String sql = "Select * from admin where UserName = ? and Password = ?";
         try {
             pst = conn.prepareStatement(sql);
-            pst.setString(1, usernameTextField.getText());
-            pst.setString(2, passwordField.getText());
+            pst.setString(1, adminTextField.getText());
+            pst.setString(2, adminPassword.getText());
             rs = pst.executeQuery();
 
             if (rs.next()) {
