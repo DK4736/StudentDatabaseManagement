@@ -41,5 +41,10 @@
         <ImageView fx:id="logo" fitHeight="134.0" fitWidth="170.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
             <Image url="@logo1.jpg" />
         </ImageView>
+      <Button layoutX="699.0" layoutY="585.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Sign Up" textFill="WHITE" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
