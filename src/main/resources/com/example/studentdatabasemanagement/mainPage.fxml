@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color:#0d1d41;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentdatabasemanagement.Controller">
+
+    <children>
+        <AnchorPane layoutY="181.0" onDragDetected="#adminButton" prefHeight="621.0" prefWidth="1550.0" style="-fx-background-color: white;">
+            <children>
+                <Button layoutX="375.0" layoutY="311.0" mnemonicParsing="false" onAction="#adminButton" prefHeight="115.0" prefWidth="319.0" text="Admin">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                    </font>
+                </Button>
+                <Button layoutX="819.0" layoutY="311.0" mnemonicParsing="false" onAction="#profButton" prefHeight="115.0" prefWidth="319.0" text="Professor">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="31.0" />
+                    </font>
+                </Button>
+                <Label layoutX="685.0" layoutY="162.0" prefHeight="58.0" prefWidth="179.0" text="Login as:">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </AnchorPane>
+        <Label layoutX="424.0" layoutY="58.0" prefHeight="54.0" prefWidth="702.0" style="-fx-text-fill: #FFFFFF" text="Welcome to Student Database of NewUU">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="35.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="logo" fitHeight="134.0" fitWidth="170.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+            <Image url="@logo1.jpg" />
+        </ImageView>
+    </children>
+
+</AnchorPane>

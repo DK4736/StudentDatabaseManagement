@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color: #0d1d41;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentdatabasemanagement.profLogin">
+    <children>
+        <Label layoutX="476.0" layoutY="203.0" prefHeight="90.0" prefWidth="170.0" style="-fx-text-fill: #FFFFFF" text="Username">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutX="476.0" layoutY="308.0" prefHeight="54.0" prefWidth="170.0" style="-fx-text-fill: #FFFFFF" text="Password">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameTextField" layoutX="700.0" layoutY="200.0" prefHeight="79.0" prefWidth="323.0" promptText="Username">
+            <font>
+                <Font size="30.0" />
+            </font></TextField>
+        <PasswordField fx:id="passwordField" layoutX="700.0" layoutY="300.0" prefHeight="79.0" prefWidth="323.0" promptText="Password">
+            <font>
+                <Font size="30.0" />
+            </font></PasswordField>
+        <Button fx:id="profLoginButton" layoutX="800.0" layoutY="450.0" mnemonicParsing="false" onAction="#profLoginButton" prefHeight="54.0" prefWidth="199.0" text="Login" textFill="#1d255b">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="Back" layoutX="500.0" layoutY="450.0" mnemonicParsing="false"  prefHeight="54.0" prefWidth="199.0" text="Back">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="logo" fitHeight="134.0" fitWidth="170.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+            <Image url="@logo1.jpg" />
+        </ImageView>
+        <Label fx:id="LoginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="616.0" layoutY="140.0" prefHeight="17.0" prefWidth="461.0" textFill="RED">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color: #0d1d41;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentdatabasemanagement.adminLogin">
+    <children>
+        <Label layoutX="476.0" layoutY="203.0" prefHeight="90.0" prefWidth="170.0" style="-fx-text-fill: #FFFFFF" text="Username">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutX="476.0" layoutY="308.0" prefHeight="54.0" prefWidth="170.0" style="-fx-text-fill: #FFFFFF" text="Password">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <TextField layoutX="700.0" layoutY="300.0" prefHeight="79.0" prefWidth="323.0" />
+        <TextField layoutX="700.0" layoutY="200.0" prefHeight="79.0" prefWidth="323.0" />
+        <Button fx:id="admLoginButton" layoutX="800.0" layoutY="450.0" mnemonicParsing="false" onAction="#admLoginButton" prefHeight="54.0"
+                prefWidth="199.0" text="Login">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="Back" layoutX="500.0" layoutY="450.0" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="199.0" text="Back">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="logo" fitHeight="134.0" fitWidth="170.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+            <Image url="@logo1.jpg" />
+        </ImageView>
+    </children>
+</AnchorPane>
