@@ -71,6 +71,7 @@ public class profLogin implements Initializable {
              rs = pst.executeQuery();
 
              if (rs.next()) {
+                 JOptionPane.showMessageDialog(null, "UserName and Password is Correct");
                  profLoginButton.getScene().getWindow().hide();
                  Parent root = FXMLLoader.load(getClass().getResource("ProfCon.fxml"));
                  Stage mainStage = new Stage();

@@ -8,10 +8,18 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class adminLogin implements Initializable {
@@ -19,36 +27,71 @@ public class adminLogin implements Initializable {
     private Scene scene;
     private Parent root;
 
+
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
 
-    public adminLogin() {
+    @FXML
+    private Label LoginMessageLabel;
+
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private PasswordField passwordField;
+
+
+    public adminLogin(){}
+
+
+    @FXML
+    void initialize(){
+
     }
 
     @FXML
-    void initialize() {
-
-    }
-
     public Button admLoginButton;
-    public Button Back;
+    @FXML
+    public Button back;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+
+
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    @FXML
+    private void admLoginButton (ActionEvent event) throws Exception {
+        conn = MySQLConnection.ConnectDb();
+        String sql = "Select * from useraccount where UserName = ? and Password = ?";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, usernameTextField.getText());
+            pst.setString(2, passwordField.getText());
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+
+                admLoginButton.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("TableSearching.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "UserName or Passsword is incorrect");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
+        }
 
     }
-    public void admLoginButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("searching.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
     public void back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -59,4 +102,21 @@ public class adminLogin implements Initializable {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
