@@ -21,7 +21,7 @@
          <font>
             <Font size="30.0" />
          </font></TextField>
-        <TextField alignment="CENTER" layoutX="700.0" layoutY="200.0" prefHeight="79.0" prefWidth="323.0" promptText="Username">
+        <TextField layoutX="700.0" layoutY="200.0" prefHeight="79.0" prefWidth="323.0" promptText="Username">
          <font>
             <Font size="30.0" />
          </font></TextField>
