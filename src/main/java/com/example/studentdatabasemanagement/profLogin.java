@@ -71,7 +71,7 @@ public class profLogin implements Initializable {
              rs = pst.executeQuery();
 
              if (rs.next()) {
-                 JOptionPane.showMessageDialog(null, "UserName and Password is Correct");
+
                  profLoginButton.getScene().getWindow().hide();
                  Parent root = FXMLLoader.load(getClass().getResource("ProfCon.fxml"));
                  Stage mainStage = new Stage();
@@ -92,6 +92,15 @@ public class profLogin implements Initializable {
      }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    public void backButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
