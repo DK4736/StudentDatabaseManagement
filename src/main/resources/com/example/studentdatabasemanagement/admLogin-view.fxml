@@ -28,12 +28,12 @@
             <font>
                 <Font size="30.0" />
             </font></PasswordField>
-        <Button fx:id="admLoginButton" layoutX="800.0" layoutY="450.0" mnemonicParsing="false" onAction="#admLoginButton" prefHeight="54.0" prefWidth="199.0" text="Login">
+        <Button fx:id="admLoginButton" layoutX="800.0" layoutY="450.0" mnemonicParsing="false" onAction="#admLoginButton" prefHeight="54.0" prefWidth="199.0" text="Login" textFill="#1d255b">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Button>
-        <Button fx:id="back" layoutX="500.0" layoutY="450.0" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="199.0" text="Back">
+        <Button fx:id="back" layoutX="500.0" layoutY="450.0" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="199.0" text="Back" textFill="#1d255b">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -41,10 +41,6 @@
         <ImageView fx:id="logo" fitHeight="134.0" fitWidth="170.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
             <Image url="@logo1.jpg" />
         </ImageView>
-      <Button layoutX="699.0" layoutY="585.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Sign Up" textFill="WHITE" underline="true">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
+
     </children>
 </AnchorPane>

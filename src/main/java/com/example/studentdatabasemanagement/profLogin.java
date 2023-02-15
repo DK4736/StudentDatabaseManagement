@@ -63,7 +63,7 @@ public class profLogin implements Initializable {
       @FXML
      private void profLoginButton (ActionEvent event) throws Exception {
          conn = MySQLConnection.ConnectDb();
-         String sql = "Select * from useraccount where UserName = ? and Password = ?";
+         String sql = "Select * from logins where ID = 2 and UserName = ? and Password = ?";
          try {
              pst = conn.prepareStatement(sql);
              pst.setString(1, usernameTextField.getText());
@@ -71,7 +71,7 @@ public class profLogin implements Initializable {
              rs = pst.executeQuery();
 
              if (rs.next()) {
-                 JOptionPane.showMessageDialog(null, "UserName and Password is Correct");
+
                  profLoginButton.getScene().getWindow().hide();
                  Parent root = FXMLLoader.load(getClass().getResource("ProfCon.fxml"));
                  Stage mainStage = new Stage();

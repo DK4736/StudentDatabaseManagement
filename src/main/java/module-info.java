@@ -12,6 +12,7 @@ module com.example.studentdatabasemanagement {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires java.desktop;
+    requires itextpdf;
 
     opens com.example.studentdatabasemanagement to javafx.fxml;
     exports com.example.studentdatabasemanagement;

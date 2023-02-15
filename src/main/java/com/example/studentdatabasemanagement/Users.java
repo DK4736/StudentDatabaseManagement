@@ -6,9 +6,10 @@ public class Users {
 
     public Users() { }
 
-    public Users(int studentID, int id, String groupNumber, String studentName,String emailAddress, String phoneNumber) {
-        this.studentID = studentID;
+    public Users( int id,int studentID, String groupNumber, String studentName,String emailAddress, String phoneNumber) {
         this.id = id;
+        this.studentID = studentID;
+
         this.groupNumber = groupNumber;
         this.studentName = studentName;
         this.emailAddress = emailAddress;

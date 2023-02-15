@@ -65,9 +65,10 @@ public class ProfCon {
 
     @FXML
     void search_user() throws SQLException, ClassNotFoundException {
+        ID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
         StudentID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("studentID"));
 
-        ID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("nid"));
+
         GroupNumber.setCellValueFactory(new PropertyValueFactory<Users, String>("groupNumber"));
         StudentName.setCellValueFactory(new PropertyValueFactory<Users, String>("studentName"));
         EmailAddress.setCellValueFactory(new PropertyValueFactory<Users,String>("emailAddress"));
@@ -84,11 +85,11 @@ public class ProfCon {
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (String.valueOf(person.getStudentID()).indexOf(lowerCaseFilter) != -1) {
+                if (String.valueOf(person.getID()).indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches username
-                } else if (String.valueOf(person.getID()).indexOf(lowerCaseFilter) != -1) {
+                } else if (String.valueOf(person.getStudentID()).indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches password
-                } else if (person.getGroupNumber().indexOf(lowerCaseFilter) != -1) {
+                } else if (person.getGroupNumber().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches password
                 } else if (person.getStudentName().toLowerCase().indexOf(lowerCaseFilter) != -1){
                     return true;// Filter matches email

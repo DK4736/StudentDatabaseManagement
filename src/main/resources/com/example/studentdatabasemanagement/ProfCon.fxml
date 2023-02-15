@@ -11,7 +11,7 @@
                 <Font name="Franklin Gothic Demi Italic" size="35.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#backPageClick" style="-fx-background-color: #fff;" text="Back page">
+        <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#backPageClick" style="-fx-background-color: #fff;" text="Back page" textFill="#1d255b">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -34,3 +34,5 @@
 
     </children>
 </AnchorPane>
+
+

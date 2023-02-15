@@ -41,7 +41,7 @@ public class MySQLConnection {
             while (rs.next()) {
                 Users tempUser = new Users();
                 tempUser.setStudentID(Integer.parseInt(rs.getString("studentID")));
-                tempUser.setID(Integer.parseInt(rs.getString("id")));
+                tempUser.setID(Integer.parseInt(rs.getString("ID")));
                 tempUser.setGroupNumber(rs.getString("GroupNumber"));
                 tempUser.setStudentName(rs.getString("studentName"));
                 tempUser.setEmailAddress(rs.getString("EmailAddress"));

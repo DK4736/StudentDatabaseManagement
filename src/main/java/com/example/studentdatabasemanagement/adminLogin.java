@@ -66,7 +66,7 @@ public class adminLogin implements Initializable {
     @FXML
     private void admLoginButton (ActionEvent event) throws Exception {
         conn = MySQLConnection.ConnectDb();
-        String sql = "Select * from admin where UserName = ? and Password = ?";
+        String sql = "Select * from logins where ID = 1 and UserName = ? and Password = ?";
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, adminTextField.getText());
@@ -76,7 +76,7 @@ public class adminLogin implements Initializable {
             if (rs.next()) {
 
                 admLoginButton.getScene().getWindow().hide();
-                Parent root = FXMLLoader.load(getClass().getResource("TableSearching.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("searching.fxml"));
                 Stage mainStage = new Stage();
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);

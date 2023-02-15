@@ -130,8 +130,10 @@ public class TableSearching implements Initializable {
 
     }
 
+
     /// Modifying/Changing the Students information
     public void Modify() {
+
         try {
             conn = MySQLConnection.ConnectDb();
             String value1 = txt_id.getText();
@@ -141,8 +143,8 @@ public class TableSearching implements Initializable {
             String value5 = txt_email.getText();
             String value6 = txt_phone.getText();
 
-            String sql = "update student_info set ID = '" + value1 + "' ,studentID= '" + value2 +
-                    "',studentName= '" + value3 + "' ,GroupNumber= '" + value4 + "',EmailAddress= '" + value5 + "',PhoneNumber= '" + value6 + "' where ID '" + value1 + "'";
+            String sql = "UPDATE student_info set ID = '" + value1 + "' ,studentID= '" + value2 +
+                    "',studentName= '" + value3 + "' ,GroupNumber= '" + value4 + "',EmailAddress= '" + value5 + "',PhoneNumber= '" + value6 + "' where ID =      '" + value1 + "'";
             pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Updated");
@@ -157,10 +159,10 @@ public class TableSearching implements Initializable {
 
     public void Delete() {
         conn = MySQLConnection.ConnectDb();
-        String sql = "delete from student_info where ID= ?";
+        String sql = "delete from student_info where studentID= ?";
         try {
             pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_id.getText());
+            pst.setString(1, txt_studentID.getText());
             pst.execute();
             JOptionPane.showMessageDialog(null, "Deleted");
             UpdateTable();
@@ -171,8 +173,9 @@ public class TableSearching implements Initializable {
     }
 
     public void UpdateTable() {
+        ID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
         StudentID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("studentID"));
-        ID.setCellValueFactory(new PropertyValueFactory<Users, Integer>("ID"));
+
         GroupNumber.setCellValueFactory(new PropertyValueFactory<Users, String>("groupNumber"));
         StudentName.setCellValueFactory(new PropertyValueFactory<Users, String>("studentName"));
         EmailAddress.setCellValueFactory(new PropertyValueFactory<Users,String>("email"));
@@ -184,8 +187,9 @@ public class TableSearching implements Initializable {
 
     @FXML
     void search_user() {
-        StudentID.setCellValueFactory(new PropertyValueFactory<Users,Integer>("studentID"));
         ID.setCellValueFactory(new PropertyValueFactory<Users,Integer>("id"));
+        StudentID.setCellValueFactory(new PropertyValueFactory<Users,Integer>("studentID"));
+
         GroupNumber.setCellValueFactory(new PropertyValueFactory<Users,String>("groupNumber"));
         StudentName.setCellValueFactory(new PropertyValueFactory<Users,String>("studentName"));
         EmailAddress.setCellValueFactory(new PropertyValueFactory<Users,String>("emailAddress"));
@@ -201,11 +205,11 @@ public class TableSearching implements Initializable {
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (String.valueOf(person.getStudentID()).indexOf(lowerCaseFilter) != -1 ) {
+                if ( String.valueOf(person.getID()).indexOf(lowerCaseFilter) != -1) {
                     return true;
-                } else if (String.valueOf(person.getID()).indexOf(lowerCaseFilter) != -1) {
+                } else if (String.valueOf(person.getStudentID()).indexOf(lowerCaseFilter) != -1) {
                     return true;
-                }else if (person.getGroupNumber().indexOf(lowerCaseFilter) != -1) {
+                }else if (person.getGroupNumber().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true;
                 }
                 else if (person.getStudentName().toLowerCase().indexOf(lowerCaseFilter)!=-1) {
